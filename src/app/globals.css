@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Gradients - Logo Aligned */
+.gradient-text {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3a66 40%, #d4a341 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #d4a341 45%, #b3832c 80%, #e5b758 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #d4a341 50%, #b3832c 100%);
+}
+
+.gradient-gold-shimmer {
+  background: linear-gradient(90deg, #d4a341 0%, #fef3c7 50%, #d4a341 100%);
+  background-size: 200% auto;
+}
+
+.gradient-navy {
+  background: linear-gradient(135deg, #0b1f3a 0%, #102a4e 50%, #050e1d 100%);
+}
+
+.gradient-midnight {
+  background: linear-gradient(135deg, #050e1d 0%, #0b1f3a 50%, #102a4e 100%);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 163, 65, 0.25);
+}
+
+.navy-glow {
+  box-shadow: 0 10px 40px -10px rgba(11, 31, 58, 0.4);
+}
+
+/* Floating & Orbit Animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit {
+  animation: orbitSpin 20s linear infinite;
+}
+
+/* ── Marquee / Ticker ─────────────────────────────────────────────────────── */
+
+/*
+  Architecture: two identical <ul> tracks sit side-by-side inside a flex
+  viewport. Each track animates independently with translateX(-100%), which
+  equals exactly one track width — no percentage-on-max-content math, no
+  layout recalc per frame. The GPU composites the transform only.
+*/
+
+.marquee-viewport {
+  display: flex;          /* tracks sit side by side */
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;         /* never wrap or shrink */
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* promote to own compositor layer up-front */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes marqueeLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marqueeRight {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-track-left {
+  animation: marqueeLeft 35s linear infinite;
+}
+
+.marquee-track-right {
+  animation: marqueeRight 42s linear infinite;
+}
+
+/* Pause the whole row on hover — targeting both tracks via the viewport */
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Flow line pulse animation */
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-flow-dash {
+  stroke-dasharray: 8 6;
+  animation: flowDash 2s linear infinite;
+}
+
+/* Subtle Modern Background Aurora Animations */
+@keyframes auroraDrift1 {
+  0% { transform: translate3d(0px, 0px, 0px) scale(1); }
+  33% { transform: translate3d(70px, -60px, 0px) scale(1.12); }
+  66% { transform: translate3d(-50px, 40px, 0px) scale(0.92); }
+  100% { transform: translate3d(0px, 0px, 0px) scale(1); }
+}
+
+@keyframes auroraDrift2 {
+  0% { transform: translate3d(0px, 0px, 0px) scale(1); }
+  33% { transform: translate3d(-60px, 50px, 0px) scale(1.15); }
+  66% { transform: translate3d(40px, -70px, 0px) scale(0.88); }
+  100% { transform: translate3d(0px, 0px, 0px) scale(1); }
+}
+
+@keyframes auroraDrift3 {
+  0% { transform: translate3d(0px, 0px, 0px) scale(1); }
+  33% { transform: translate3d(50px, 60px, 0px) scale(1.1); }
+  66% { transform: translate3d(-70px, -40px, 0px) scale(0.95); }
+  100% { transform: translate3d(0px, 0px, 0px) scale(1); }
+}
+
+@keyframes auroraDrift4 {
+  0% { transform: translate3d(0px, 0px, 0px) scale(1); }
+  33% { transform: translate3d(-40px, -50px, 0px) scale(1.08); }
+  66% { transform: translate3d(60px, 50px, 0px) scale(0.94); }
+  100% { transform: translate3d(0px, 0px, 0px) scale(1); }
+}
+
+.animate-aurora-1 {
+  animation: auroraDrift1 26s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aurora-2 {
+  animation: auroraDrift2 32s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aurora-3 {
+  animation: auroraDrift3 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-aurora-4 {
+  animation: auroraDrift4 34s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Micro-dot framework grid */
+.bg-grid-dots {
+  background-image: radial-gradient(rgba(11, 31, 58, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-aurora-1,
+  .animate-aurora-2,
+  .animate-aurora-3,
+  .animate-aurora-4 {
+    animation: none !important;
+  }
+}
