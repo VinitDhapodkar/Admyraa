@@ -204,10 +204,10 @@ export const AboutSection = () => {
                 Our Vision
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-white mb-4 leading-snug">
-                Every Student Gets the Opportunity to Learn, Grow & Earn
+                Beyond Education — Toward Employment & Long-Term Career Growth
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                To create an ecosystem where every student gets the opportunity to learn, develop skills, gain practical exposure, and move toward a meaningful career. At Admyra, we are working to bridge the gap between Education and Employment by combining academic guidance, skill development, and real-world opportunities under one ecosystem.
+                Our vision is to build an ecosystem where students don&apos;t simply complete their education — they develop the skills, experience, and opportunities needed to move confidently toward employment and long-term career growth.
               </p>
             </TiltCard>
           </ScrollReveal>
@@ -220,9 +220,12 @@ export const AboutSection = () => {
                 Our Mission
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-4 leading-snug">
-                Four Pillars of What We Stand For
+                From Learning to Becoming Career-Ready Professionals
               </h3>
-              <ul className="space-y-3">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                To create a structured ecosystem that connects Education, Skills, Experience, Earning Opportunities, and Employment — helping students move from learning to becoming career-ready professionals.
+              </p>
+              <ul className="space-y-3 mt-4">
                 {MISSION_POINTS.map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />

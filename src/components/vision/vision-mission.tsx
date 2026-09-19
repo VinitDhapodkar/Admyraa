@@ -32,10 +32,10 @@ export const VisionMission = () => {
                 </div>
                 <div className="text-xs font-black uppercase tracking-wider text-[#0b1f3a] mb-2">Our Vision</div>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4 tracking-tight">
-                  India&apos;s Most Trusted Placement Ecosystem
+                  Beyond Education — Toward Employment &amp; Long-Term Career Growth
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-medium">
-                  To become India&apos;s most trusted Employability &amp; Placement Ecosystem, where every student gets access to meaningful career opportunities and every organization finds skilled talent.
+                  Our vision is to build an ecosystem where students don&apos;t simply complete their education — they develop the skills, experience, and opportunities needed to move confidently toward employment and long-term career growth.
                 </p>
               </div>
             </TiltCard>
@@ -49,10 +49,10 @@ export const VisionMission = () => {
                 </div>
                 <div className="text-xs font-black uppercase tracking-wider text-amber-700 mb-2">Our Mission</div>
                 <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-4 tracking-tight">
-                  Digitally Unifying Campuses &amp; Employers
+                  From Learning to Becoming Career-Ready Professionals
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-medium">
-                  To strengthen the employment ecosystem by digitally connecting educational institutions, students, and employers through training, career readiness, and placement support.
+                  To create a structured ecosystem that connects Education, Skills, Experience, Earning Opportunities, and Employment — helping students move from learning to becoming career-ready professionals.
                 </p>
               </div>
             </TiltCard>
