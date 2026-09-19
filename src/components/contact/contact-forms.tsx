@@ -42,13 +42,13 @@ export const ContactForms = () => {
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-4">
             <ScrollReveal direction="left">
-              <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-amber-400 transition-all">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-amber-400 transition-all">
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 border border-amber-200/60 flex items-center justify-center shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Official Email</div>
-                  <a href={`mailto:${SITE_DATA.brand.email}`} className="text-base font-bold text-slate-900 hover:text-amber-700 transition-colors">
+                  <a href={`mailto:${SITE_DATA.brand.email}`} className="text-sm sm:text-base font-bold text-slate-900 hover:text-amber-700 transition-colors break-words">
                     {SITE_DATA.brand.email}
                   </a>
                 </div>
@@ -56,17 +56,17 @@ export const ContactForms = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.1}>
-              <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-emerald-400 transition-all">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-emerald-400 transition-all">
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center shrink-0">
                   <Phone className="w-6 h-6" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Phone &amp; WhatsApp</div>
                   <a
                     href={`https://wa.me/${SITE_DATA.brand.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-bold text-slate-900 hover:text-emerald-600 transition-colors"
+                    className="text-sm sm:text-base font-bold text-slate-900 hover:text-emerald-600 transition-colors"
                   >
                     {SITE_DATA.brand.phone}
                   </a>
@@ -75,13 +75,13 @@ export const ContactForms = () => {
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.2}>
-              <div className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-[#0b1f3a] transition-all">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm flex items-center gap-4 hover:border-[#0b1f3a] transition-all">
                 <div className="w-12 h-12 rounded-xl bg-[#0b1f3a]/10 text-[#0b1f3a] border border-[#0b1f3a]/15 flex items-center justify-center shrink-0">
                   <Building2 className="w-6 h-6" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Colleges &amp; Universities</div>
-                  <div className="text-base font-bold text-slate-900">Partnership Enquiries Welcome</div>
+                  <div className="text-sm sm:text-base font-bold text-slate-900">Partnership Enquiries Welcome</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -90,41 +90,41 @@ export const ContactForms = () => {
           {/* Form Card */}
           <div className="lg:col-span-7">
             <ScrollReveal direction="right">
-              <TiltCard className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl">
+              <TiltCard className="p-5 sm:p-8 lg:p-10 rounded-3xl bg-white border border-slate-200 shadow-xl">
                 {/* Form Segmented Tabs */}
                 <div className="flex p-1.5 rounded-2xl bg-slate-100 mb-8 gap-1">
                   <button
                     onClick={() => { setActiveTab("college"); setSubmitted(null); }}
-                    className={`flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
                       activeTab === "college"
                         ? "bg-white text-[#0b1f3a] shadow-sm font-extrabold border border-slate-200/80"
                         : "text-slate-600 hover:text-amber-800"
                     }`}
                   >
-                    <Building2 className="w-4 h-4" />
-                    College
+                    <Building2 className="w-4 h-4 shrink-0" />
+                    <span>College</span>
                   </button>
                   <button
                     onClick={() => { setActiveTab("student"); setSubmitted(null); }}
-                    className={`flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
                       activeTab === "student"
                         ? "bg-white text-[#0b1f3a] shadow-sm font-extrabold border border-slate-200/80"
                         : "text-slate-600 hover:text-amber-800"
                     }`}
                   >
-                    <GraduationCap className="w-4 h-4" />
-                    Student
+                    <GraduationCap className="w-4 h-4 shrink-0" />
+                    <span>Student</span>
                   </button>
                   <button
                     onClick={() => { setActiveTab("company"); setSubmitted(null); }}
-                    className={`flex-1 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${
                       activeTab === "company"
                         ? "bg-white text-[#0b1f3a] shadow-sm font-extrabold border border-slate-200/80"
                         : "text-slate-600 hover:text-amber-800"
                     }`}
                   >
-                    <Briefcase className="w-4 h-4" />
-                    Company
+                    <Briefcase className="w-4 h-4 shrink-0" />
+                    <span>Company</span>
                   </button>
                 </div>
 

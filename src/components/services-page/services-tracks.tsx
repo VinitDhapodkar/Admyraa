@@ -37,7 +37,7 @@ const ComingSoonBlock = ({ accentColor }: { accentColor: string }) => {
   return (
     <ScrollReveal delay={0.1}>
       <div
-        className={`rounded-3xl border-2 border-dashed ${c.border} ${c.bg} flex flex-col items-center justify-center py-20 px-8 text-center gap-5`}
+        className={`rounded-3xl border-2 border-dashed ${c.border} ${c.bg} flex flex-col items-center justify-center py-14 sm:py-20 px-4 sm:px-8 text-center gap-5`}
       >
         <div className={`w-16 h-16 rounded-2xl bg-white border ${c.border} flex items-center justify-center shadow-sm`}>
           <Clock className={`w-8 h-8 ${c.icon}`} />

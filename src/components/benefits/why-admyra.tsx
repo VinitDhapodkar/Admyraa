@@ -91,7 +91,7 @@ const NoteCard = ({
           className="
             relative z-10 flex flex-col h-full
             bg-white rounded-3xl
-            px-7 pt-12 pb-8
+            px-5 sm:px-7 pt-11 sm:pt-12 pb-7 sm:pb-8
             shadow-[0_4px_24px_rgba(0,0,0,0.09),0_1px_4px_rgba(0,0,0,0.06)]
             hover:shadow-[0_8px_36px_rgba(0,0,0,0.13)]
             hover:-translate-y-1
@@ -143,7 +143,7 @@ export const WhyAdmyra = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section heading */}
-        <ScrollReveal className="text-center max-w-3xl mx-auto mb-20">
+        <ScrollReveal className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <span className="inline-flex items-center gap-2 text-xs font-extrabold tracking-widest text-amber-900 uppercase bg-amber-50 border border-amber-200/90 px-4 py-1.5 rounded-full mb-3 shadow-sm">
             <Target className="w-3.5 h-3.5 text-amber-600" />
             Why Choose ADMYRA
@@ -157,7 +157,7 @@ export const WhyAdmyra = () => {
         </ScrollReveal>
 
         {/* Pinboard grid — extra row-gap for pushpin overhang */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-7 gap-y-10 sm:gap-y-14">
           {SITE_DATA.benefits.map((benefit, i) => (
             <NoteCard
               key={benefit.title}

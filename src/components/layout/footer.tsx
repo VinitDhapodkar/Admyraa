@@ -36,10 +36,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-300/80 mb-4">Company</h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
-              <li><Link href="/#about" className="hover:text-amber-400 transition-colors">About ADMYRA</Link></li>
-              <li><Link href="/#vision" className="hover:text-amber-400 transition-colors">Vision &amp; Mission</Link></li>
-              <li><Link href="/#team" className="hover:text-amber-400 transition-colors">Leadership Team</Link></li>
-              <li><Link href="/#testimonials" className="hover:text-amber-400 transition-colors">Success Stories</Link></li>
+              <li><Link href="/about" className="hover:text-amber-400 transition-colors">About ADMYRA</Link></li>
+              <li><Link href="/about#vision" className="hover:text-amber-400 transition-colors">Vision &amp; Mission</Link></li>
+              <li><Link href="/about#team" className="hover:text-amber-400 transition-colors">Leadership Team</Link></li>
               <li><Link href="/#faq" className="hover:text-amber-400 transition-colors">Help &amp; FAQ</Link></li>
             </ul>
           </div>
@@ -60,7 +59,7 @@ export const Footer = () => {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-300/80 mb-4">Connect</h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
-              <li><a href={`mailto:${SITE_DATA.brand.email}`} className="text-amber-400 hover:text-amber-300 font-semibold">{SITE_DATA.brand.email}</a></li>
+              <li><a href={`mailto:${SITE_DATA.brand.email}`} className="text-amber-400 hover:text-amber-300 font-semibold break-all">{SITE_DATA.brand.email}</a></li>
               <li><Link href="/#contact" className="hover:text-amber-400 transition-colors">Login</Link></li>
               <li><Link href="/#contact" className="hover:text-amber-400 transition-colors">Campus Placement Cell</Link></li>
               <li><Link href="/#contact" className="hover:text-amber-400 transition-colors">Corporate Talent Desk</Link></li>
@@ -69,9 +68,9 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center sm:text-left">
           <p>© {new Date().getFullYear()} ADMYRA — Digitally Enabled Real Employment. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <a href="#" className="hover:text-slate-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-slate-400 transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-slate-400 transition-colors">Placement Code</a>

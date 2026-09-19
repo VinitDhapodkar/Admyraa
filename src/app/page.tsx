@@ -20,7 +20,7 @@ import { AnimatedBackground } from "@/components/background/animated-background"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-transparent selection:bg-amber-500 selection:text-slate-950 relative">
+    <main className="min-h-screen w-full overflow-x-clip bg-transparent selection:bg-amber-500 selection:text-slate-950 relative">
       <AnimatedBackground />
       <ScrollProgress />
       <Navbar />

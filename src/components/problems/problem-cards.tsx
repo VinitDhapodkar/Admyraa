@@ -30,15 +30,15 @@ export const ProblemCards = () => {
         </ScrollReveal>
 
         {/* Cohesive, Harmonious Cards (Consistent with Website UI Design) */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {SITE_DATA.problems.map((prob, i) => (
             <ScrollReveal
               key={prob.title}
               direction={i === 0 ? "left" : i === 1 ? "up" : "right"}
               delay={i * 0.15}
-              className="h-full"
+              className={`h-full ${i === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
             >
-              <TiltCard className="p-8 sm:p-10 rounded-3xl bg-white border-2 border-slate-200/80 shadow-md hover:shadow-xl hover:border-amber-400/80 transition-all duration-300 h-full flex flex-col justify-between group">
+              <TiltCard className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border-2 border-slate-200/80 shadow-md hover:shadow-xl hover:border-amber-400/80 transition-all duration-300 h-full flex flex-col justify-between group">
                 <div>
                   {/* Card Header: Icon & Badge */}
                   <div className="flex items-center justify-between gap-4 mb-6">

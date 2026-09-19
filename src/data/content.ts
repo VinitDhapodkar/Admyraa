@@ -84,7 +84,7 @@ export const SITE_DATA = {
   },
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/#contact" },

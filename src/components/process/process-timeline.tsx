@@ -62,12 +62,12 @@ export const ProcessTimeline = () => {
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 relative z-10">
             {SITE_DATA.processTimeline.map((item, i) => (
               <ScrollReveal
                 key={item.label}
                 delay={i * 0.1}
-                className="group relative p-6 rounded-3xl bg-white/[0.04] border border-amber-400/25 backdrop-blur-xl text-center hover:bg-white/[0.09] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/15 transition-all duration-300 flex flex-col justify-between"
+                className="group relative p-5 sm:p-6 rounded-3xl bg-white/[0.04] border border-amber-400/25 backdrop-blur-xl text-center hover:bg-white/[0.09] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/15 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Flow indicator arrow for desktop between cards */}
                 {i < SITE_DATA.processTimeline.length - 1 && (

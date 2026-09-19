@@ -64,11 +64,11 @@ export const AboutSection = () => {
           {/* Left — Visual card */}
           <div className="lg:col-span-5">
             <ScrollReveal direction="left">
-              <TiltCard className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border-2 border-amber-400/40 shadow-2xl relative overflow-hidden text-white group">
+              <TiltCard className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border-2 border-amber-400/40 shadow-2xl relative overflow-hidden text-white group">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-2xl pointer-events-none" />
 
                 {/* Logo */}
-                <div className="w-full h-64 sm:h-72 rounded-2xl bg-white p-6 shadow-xl border border-slate-100 flex items-center justify-center mb-6 relative overflow-hidden group-hover:shadow-2xl transition-all">
+                <div className="w-full h-52 sm:h-64 lg:h-72 rounded-2xl bg-white p-4 sm:p-6 shadow-xl border border-slate-100 flex items-center justify-center mb-6 relative overflow-hidden group-hover:shadow-2xl transition-all">
                   <Image
                     src="/logo-transparent.png"
                     alt="Official ADMYRA Crest"
@@ -88,17 +88,17 @@ export const AboutSection = () => {
                   Admission to Career
                 </h3>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-8 font-medium">
+                <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6 sm:mb-8 font-medium">
                   From Admission to Training, Training to Earning Opportunities, and Earning Opportunities to Career Development — Admyra builds the complete journey.
                 </p>
 
-                <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-3.5 shadow-lg">
+                <div className="p-3.5 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex items-center gap-3.5 shadow-lg">
                   <div className="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/40">
                     <CheckCircle2 className="w-5 h-5 text-amber-400" />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-white">Learn. Grow. Earn. Build Your Career.</div>
-                    <div className="text-xs text-amber-300/90 font-semibold">Admyra — From Skills to Opportunity to Career</div>
+                    <div className="text-xs sm:text-sm font-bold text-white">Learn. Grow. Earn. Build Your Career.</div>
+                    <div className="text-[11px] sm:text-xs text-amber-300/90 font-semibold">Admyra — From Skills to Opportunity to Career</div>
                   </div>
                 </div>
               </TiltCard>
@@ -125,7 +125,7 @@ export const AboutSection = () => {
                 Our vision is to build a complete education-to-employment ecosystem where a student&apos;s journey extends from Admission to Training, Training to Earning Opportunities, and Earning Opportunities to Career Development.
               </p>
 
-              <div className="p-5 rounded-2xl bg-amber-50/90 border-l-4 border-amber-500 my-4 shadow-sm">
+              <div className="p-4 sm:p-5 rounded-2xl bg-amber-50/90 border-l-4 border-amber-500 my-4 shadow-sm">
                 <p className="text-base sm:text-lg font-black text-slate-900">
                   For us, admission is not the destination — it is the beginning of a student&apos;s career journey.
                 </p>
@@ -135,29 +135,29 @@ export const AboutSection = () => {
                 We aim to make quality education more accessible by helping students identify suitable universities and academic programs based on their career goals, interests, and individual requirements.
               </p>
 
-              <div className="flex flex-wrap gap-3 pt-3">
-                <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
+              <div className="flex flex-wrap gap-2.5 sm:gap-3 pt-3">
+                <span className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   Admission Guidance
                 </span>
-                <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
+                <span className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   Skill Development
                 </span>
-                <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
+                <span className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-100 text-slate-900 text-xs font-black flex items-center gap-2 border border-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   Career & Placement Support
                 </span>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="rounded-xl bg-[#0b1f3a] hover:bg-[#102a4e] text-white border border-amber-500/40 shadow-lg font-black">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-4">
+                <Button asChild size="lg" className="w-full sm:w-auto justify-center rounded-xl bg-[#0b1f3a] hover:bg-[#102a4e] text-white border border-amber-500/40 shadow-lg font-black">
                   <a href="#solution" className="gap-2">
                     <span>See Our Solution</span>
                     <ArrowRight className="w-4 h-4 text-amber-400" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-900 hover:bg-amber-50/50 font-black">
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto justify-center rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-900 hover:bg-amber-50/50 font-black">
                   <a href="#contact">Partner With Admyra</a>
                 </Button>
               </div>
@@ -193,18 +193,18 @@ export const AboutSection = () => {
         </ScrollReveal>
 
         {/* ── Row 3: Vision + Mission + Promise ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* Vision */}
-          <ScrollReveal direction="left">
-            <TiltCard className="h-full p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border border-amber-400/30 shadow-xl text-white relative overflow-hidden">
+          <ScrollReveal direction="left" className="h-full">
+            <TiltCard className="h-full p-6 sm:p-7 lg:p-8 rounded-2xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border border-amber-400/30 shadow-xl text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/15 text-amber-300 text-xs font-black uppercase tracking-wider mb-5 border border-amber-400/30">
                 <Target className="w-3 h-3 text-amber-400" />
                 Our Vision
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-white mb-4 leading-snug">
-                Beyond Education — Toward Employment & Long-Term Career Growth
+                Beyond Education — Toward Employment &amp; Long-Term Career Growth
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Our vision is to build an ecosystem where students don&apos;t simply complete their education — they develop the skills, experience, and opportunities needed to move confidently toward employment and long-term career growth.
@@ -213,8 +213,8 @@ export const AboutSection = () => {
           </ScrollReveal>
 
           {/* Mission */}
-          <ScrollReveal direction="up" delay={0.08}>
-            <TiltCard className="h-full p-7 sm:p-8 rounded-2xl bg-amber-50 border border-amber-200 shadow-xl relative overflow-hidden">
+          <ScrollReveal direction="up" delay={0.08} className="h-full">
+            <TiltCard className="h-full p-6 sm:p-7 lg:p-8 rounded-2xl bg-amber-50 border border-amber-200 shadow-xl relative overflow-hidden">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/20 text-amber-800 text-xs font-black uppercase tracking-wider mb-5 border border-amber-300">
                 <CheckCircle2 className="w-3 h-3 text-amber-600" />
                 Our Mission
@@ -237,8 +237,8 @@ export const AboutSection = () => {
           </ScrollReveal>
 
           {/* Promise */}
-          <ScrollReveal direction="right" delay={0.16}>
-            <TiltCard className="h-full p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border border-amber-400/30 shadow-xl text-white relative overflow-hidden">
+          <ScrollReveal direction="right" delay={0.16} className="md:col-span-2 lg:col-span-1 h-full">
+            <TiltCard className="h-full p-6 sm:p-7 lg:p-8 rounded-2xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] border border-amber-400/30 shadow-xl text-white relative overflow-hidden">
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none" />
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/15 text-amber-300 text-xs font-black uppercase tracking-wider mb-5 border border-amber-400/30">
                 <Target className="w-3 h-3 text-amber-400" />

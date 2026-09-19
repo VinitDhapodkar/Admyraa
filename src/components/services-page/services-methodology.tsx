@@ -72,10 +72,10 @@ export const ServicesMethodology = () => {
         </ScrollReveal>
 
         {/* 6-Step Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {steps.map((item, idx) => (
             <ScrollReveal key={item.step} delay={idx * 0.08}>
-              <TiltCard className="p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-amber-400/50 hover:bg-white/[0.07] transition-all duration-300 h-full flex flex-col justify-between group shadow-xl">
+              <TiltCard className="p-6 sm:p-8 rounded-3xl bg-white/[0.04] border border-white/10 hover:border-amber-400/50 hover:bg-white/[0.07] transition-all duration-300 h-full flex flex-col justify-between group shadow-xl">
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-amber-400/40 transition-all">

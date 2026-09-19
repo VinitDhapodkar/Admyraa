@@ -25,10 +25,14 @@ export const TeamSection = () => {
         </ScrollReveal>
 
         {/* Team Cards (Adopting Reference Experts Grid Styling) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {SITE_DATA.team.map((member, i) => (
-            <ScrollReveal key={member.role} delay={i * 0.1} className="h-full">
-              <TiltCard className="p-8 sm:p-9 rounded-3xl bg-white border-2 border-slate-200/90 shadow-lg text-center hover:shadow-2xl hover:border-amber-400 transition-all duration-300 h-full flex flex-col justify-between group">
+            <ScrollReveal
+              key={member.role}
+              delay={i * 0.1}
+              className={`h-full ${i === 2 ? "sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none w-full" : ""}`}
+            >
+              <TiltCard className="p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border-2 border-slate-200/90 shadow-lg text-center hover:shadow-2xl hover:border-amber-400 transition-all duration-300 h-full flex flex-col justify-between group">
                 <div>
                   <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-amber-300 border border-amber-400/40 flex items-center justify-center mx-auto mb-6 shadow-xl shadow-amber-950/20 group-hover:scale-110 transition-transform">
                     {member.isHiring ? <UserPlus className="w-9 h-9 text-amber-400" /> : <User className="w-9 h-9" />}

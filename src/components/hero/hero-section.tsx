@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { SITE_DATA } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { HeroVisual } from "./hero-visual";
@@ -36,7 +37,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]"
+              className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.14]"
             >
               Bridging the Gap Between{" "}
               <span className="gradient-gold-text">{SITE_DATA.hero.highlight}</span>
@@ -46,7 +47,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-sm sm:text-base lg:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               {SITE_DATA.hero.subtitle}
             </motion.p>
@@ -56,24 +57,24 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full"
             >
-              <Button asChild size="lg" className="rounded-xl bg-[#0b1f3a] hover:bg-[#102a4e] text-white border border-amber-500/40 shadow-lg shadow-amber-950/20 hover:border-amber-400 gap-2 font-bold transition-all">
+              <Button asChild size="lg" className="w-full sm:w-auto justify-center rounded-xl bg-[#0b1f3a] hover:bg-[#102a4e] text-white border border-amber-500/40 shadow-lg shadow-amber-950/20 hover:border-amber-400 gap-2 font-bold transition-all">
                 <a href="#contact">
                   <span>{SITE_DATA.hero.primaryCta}</span>
                   <ArrowRight className="w-4 h-4 text-amber-400" />
                 </a>
               </Button>
 
-              <Button asChild variant="outline" size="lg" className="rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-800 hover:bg-amber-50/50 transition-colors font-bold">
-                <a href="#about">{SITE_DATA.hero.secondaryCta}</a>
+              <Button asChild variant="outline" size="lg" className="w-full sm:w-auto justify-center rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-800 hover:bg-amber-50/50 transition-colors font-bold">
+                <Link href="/about">{SITE_DATA.hero.secondaryCta}</Link>
               </Button>
 
               <Button
                 variant="secondary"
                 size="lg"
                 onClick={() => setVideoModalOpen(true)}
-                className="rounded-xl gap-2 text-slate-800 bg-slate-100 hover:bg-amber-50 hover:text-amber-800 transition-colors font-bold"
+                className="w-full sm:w-auto justify-center rounded-xl gap-2 text-slate-800 bg-slate-100 hover:bg-amber-50 hover:text-amber-800 transition-colors font-bold"
               >
                 <Play className="w-4 h-4 fill-amber-500 text-amber-500" />
                 {SITE_DATA.hero.videoCta}
@@ -85,9 +86,9 @@ export const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="pt-4 flex items-center justify-center lg:justify-start gap-3 text-xs font-bold uppercase tracking-widest text-slate-400"
+              className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 text-xs font-bold uppercase tracking-widest text-slate-400"
             >
-              <span className="px-3 py-1 rounded-full bg-amber-100/90 text-amber-900 border border-amber-300/70 font-bold">Motto</span>
+              <span className="px-3 py-1 rounded-full bg-amber-100/90 text-amber-900 border border-amber-300/70 font-bold shrink-0">Motto</span>
               <span className="text-slate-600 font-semibold">{SITE_DATA.brand.tagline}</span>
             </motion.div>
           </div>

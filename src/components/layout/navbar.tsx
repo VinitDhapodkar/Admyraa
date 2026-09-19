@@ -33,15 +33,15 @@ function scrollToHash(href: string, pathname: string): boolean {
 const SECTION_TO_NAV: Record<string, string> = {
   hero:         "/",
   stats:        "/",
-  about:        "/#about",
-  solution:     "/#about",
-  process:      "/#about",
-  problems:     "/#about",
-  services:     "/#about",   // on homepage the services section sits near about
-  benefits:     "/#about",
-  partnerships: "/#about",
-  vision:       "/#about",
-  team:         "/#about",
+  about:        "/",
+  solution:     "/",
+  process:      "/",
+  problems:     "/",
+  services:     "/",
+  benefits:     "/",
+  partnerships: "/",
+  vision:       "/",
+  team:         "/",
   faq:          "/#faq",
   contact:      "/#contact",
 };
@@ -92,13 +92,6 @@ export const Navbar = () => {
 
       const navHref = SECTION_TO_NAV[activeId] ?? "/";
       setScrollHref(navHref);
-
-      // Keep URL hash in sync silently
-      const anchor = navHref.startsWith("/#") ? navHref.slice(1) : "";
-      const newHash = anchor ? `#${anchor}` : "";
-      if (window.location.hash !== newHash) {
-        window.history.replaceState(null, "", newHash || window.location.pathname);
-      }
     };
 
     update(); // run once on mount
@@ -170,7 +163,7 @@ export const Navbar = () => {
   return (
     <header
       data-navbar
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4 sm:px-6 lg:px-8"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-3 sm:pt-4 px-3 sm:px-6 lg:px-8"
     >
       <div
         className={`w-full max-w-6xl transition-all duration-300 ${
@@ -179,18 +172,18 @@ export const Navbar = () => {
             : "rounded-2xl bg-[#0d1b2e]/90 backdrop-blur-md shadow-xl shadow-black/30 border border-white/10"
         }`}
       >
-        <div className="flex items-center justify-between px-4 sm:px-5 py-3">
+        <div className="flex items-center justify-between px-3.5 sm:px-5 py-2.5 sm:py-3">
 
           {/* ── Logo ── */}
           <Link
             href="/"
             onClick={(e) => handleNavClick(e, "/")}
-            className="flex items-center gap-2.5 shrink-0 group"
+            className="flex items-center gap-2 sm:gap-2.5 shrink-0 group"
           >
-            <div className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-white/20 group-hover:border-amber-400/60 transition-all duration-300">
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg bg-white border border-white/20 group-hover:border-amber-400/60 transition-all duration-300">
               <Image src="/logo.png" alt="ADMYRA" width={36} height={36} priority className="w-full h-full object-contain" />
             </div>
-            <span className="font-extrabold tracking-tight text-white text-lg sm:text-xl">
+            <span className="font-extrabold tracking-tight text-white text-base sm:text-xl">
               AD<span className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">MYRA</span>
             </span>
           </Link>
@@ -243,9 +236,9 @@ export const Navbar = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.22, ease: "easeOut" }}
-              className="lg:hidden overflow-hidden border-t border-white/10"
+              className="lg:hidden overflow-hidden border-t border-white/10 max-h-[calc(100vh-5rem)] overflow-y-auto"
             >
-              <div className="px-4 py-5 flex flex-col gap-1">
+              <div className="px-4 py-4 sm:py-5 flex flex-col gap-1">
                 {SITE_DATA.navLinks.map((link) => {
                   const active = isActive(link);
                   return (

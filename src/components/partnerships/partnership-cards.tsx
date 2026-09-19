@@ -32,9 +32,9 @@ export const PartnershipCards = () => {
           {SITE_DATA.partnerships.map((tier, i) => (
             <ScrollReveal key={tier.title} delay={i * 0.12} className="h-full">
               <TiltCard
-                className={`p-8 sm:p-10 rounded-3xl border-2 transition-all duration-300 hover:shadow-2xl h-full flex flex-col justify-between relative group ${
+                className={`p-6 sm:p-8 lg:p-10 rounded-3xl border-2 transition-all duration-300 hover:shadow-2xl h-full flex flex-col justify-between relative group ${
                   tier.popular
-                    ? "border-amber-400 bg-gradient-to-b from-[#0b1f3a] to-[#050e1d] text-white shadow-2xl shadow-amber-950/20 scale-105 z-10"
+                    ? "border-amber-400 bg-gradient-to-b from-[#0b1f3a] to-[#050e1d] text-white shadow-2xl shadow-amber-950/20 lg:scale-105 z-10"
                     : "border-slate-200/90 bg-white text-slate-900 hover:border-amber-400/80 shadow-md"
                 }`}
               >

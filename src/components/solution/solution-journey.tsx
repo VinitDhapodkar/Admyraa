@@ -59,7 +59,7 @@ export const SolutionJourney = () => {
           </div>
 
           {/* Stepper Nodes */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 relative z-10">
             {SITE_DATA.solutionSteps.map((step) => {
               const isActive = activeStep === step.step;
               const isPassed = activeStep >= step.step;
@@ -68,7 +68,9 @@ export const SolutionJourney = () => {
                 <button
                   key={step.step}
                   onClick={() => setActiveStep(step.step)}
-                  className={`group relative p-4 rounded-2xl border-2 text-left transition-all duration-300 flex flex-col justify-between ${
+                  className={`group relative p-3 sm:p-4 rounded-2xl border-2 text-left transition-all duration-300 flex flex-col justify-between ${
+                    step.step === 5 ? "col-span-2 sm:col-span-1" : ""
+                  } ${
                     isActive
                       ? "bg-[#0b1f3a] text-white border-amber-400 shadow-xl shadow-amber-950/15 -translate-y-1.5"
                       : isPassed
@@ -76,9 +78,9 @@ export const SolutionJourney = () => {
                       : "bg-white/80 text-slate-700 border-slate-200/90 hover:border-slate-300"
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
                     <span
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider ${
+                      className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-black uppercase tracking-wider ${
                         isActive
                           ? "bg-amber-400/20 text-amber-300 border border-amber-400/40"
                           : "bg-slate-100 text-slate-600 border border-slate-200"
@@ -91,7 +93,7 @@ export const SolutionJourney = () => {
                     </span>
 
                     <div
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black transition-all ${
+                      className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-[11px] sm:text-xs font-black transition-all ${
                         isActive
                           ? "bg-amber-400 text-slate-950 scale-110 shadow-md"
                           : isPassed
@@ -103,7 +105,7 @@ export const SolutionJourney = () => {
                     </div>
                   </div>
 
-                  <div className="font-bold text-sm tracking-tight line-clamp-1">
+                  <div className="font-bold text-xs sm:text-sm tracking-tight line-clamp-1">
                     {step.title}
                   </div>
                 </button>
@@ -118,41 +120,41 @@ export const SolutionJourney = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white border-2 border-amber-400/40 shadow-2xl relative overflow-hidden"
+          className="p-5 sm:p-8 lg:p-12 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white border-2 border-amber-400/40 shadow-2xl relative overflow-hidden"
         >
           {/* Decorative glowing backdrops */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center relative z-10">
             {/* Left: Step Info */}
-            <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-black tracking-wider uppercase">
+            <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-[11px] sm:text-xs font-black tracking-wider uppercase">
                 <Layers className="w-3.5 h-3.5 text-amber-400" />
                 <span>Stage 0{activeData.step} of 05 in the Ecosystem</span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
+              <h3 className="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
                 {activeData.title}
               </h3>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl font-medium">
                 {activeData.desc}
               </p>
 
               {/* Navigation stepper buttons */}
-              <div className="flex items-center gap-3 pt-4">
+              <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-3 sm:pt-4">
                 <button
                   disabled={activeStep === 1}
                   onClick={() => setActiveStep((prev) => Math.max(1, prev - 1))}
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white disabled:opacity-40 disabled:cursor-not-allowed border border-white/10 transition-all"
+                  className="px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white disabled:opacity-40 disabled:cursor-not-allowed border border-white/10 transition-all"
                 >
                   ← Previous Stage
                 </button>
                 <button
                   disabled={activeStep === 5}
                   onClick={() => setActiveStep((prev) => Math.min(5, prev + 1))}
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 disabled:opacity-40 disabled:cursor-not-allowed shadow-md transition-all flex items-center gap-1.5"
+                  className="px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 disabled:opacity-40 disabled:cursor-not-allowed shadow-md transition-all flex items-center gap-1.5"
                 >
                   <span>Next Stage</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -162,25 +164,27 @@ export const SolutionJourney = () => {
 
             {/* Right: Step Visual Emblem */}
             <div className="lg:col-span-4 flex justify-center lg:justify-end">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border border-amber-400/30 backdrop-blur-xl flex flex-col items-center justify-center p-6 text-center shadow-2xl group">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-400/20 text-amber-300 border border-amber-400/40 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <div className="relative w-32 h-32 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border border-amber-400/30 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-6 text-center shadow-2xl group">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-amber-400/20 text-amber-300 border border-amber-400/40 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
                   {solutionIcons[activeData.icon]}
                 </div>
-                <div className="text-2xl font-black text-white">Step 0{activeData.step}</div>
+                <div className="text-lg sm:text-2xl font-black text-white">Step 0{activeData.step}</div>
               </div>
             </div>
           </div>
         </motion.div>
 
         {/* 5-Step Grid Cards: Full View with Vector Icons (No Emojis) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 mt-8">
           {SITE_DATA.solutionSteps.map((step) => {
             const isCurrent = activeStep === step.step;
             return (
               <div
                 key={step.step}
                 onClick={() => setActiveStep(step.step)}
-                className={`p-6 rounded-2xl border-2 transition-all cursor-pointer text-center relative ${
+                className={`p-5 sm:p-6 rounded-2xl border-2 transition-all cursor-pointer text-center relative ${
+                  step.step === 5 ? "sm:col-span-2 lg:col-span-1" : ""
+                } ${
                   isCurrent
                     ? "border-amber-400 bg-amber-50/70 shadow-lg -translate-y-1"
                     : "border-slate-200/90 bg-white hover:border-amber-300 hover:shadow-md"

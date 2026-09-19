@@ -8,7 +8,7 @@ import { Building2, GraduationCap, Briefcase, ArrowRight, Target } from "lucide-
 
 export const FinalCTA = () => {
   return (
-    <section id="final-cta" className="py-28 bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white relative overflow-hidden">
+    <section id="final-cta" className="py-20 sm:py-28 bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white relative overflow-hidden">
       {/* Background Floating Orbs */}
       <div className="absolute top-10 left-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-amber-400/15 rounded-full blur-3xl pointer-events-none" />
@@ -19,21 +19,21 @@ export const FinalCTA = () => {
             <Target className="w-3.5 h-3.5 text-amber-400" />
             Take Action
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
             Build the Future of Employability With ADMYRA
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-medium">
+          <p className="text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed font-medium">
             Whether you are a College, University, Student, or Company — ADMYRA can help you build a stronger future through employability and placement solutions.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {/* Colleges */}
           <ScrollReveal delay={0.1} className="h-full">
-            <TiltCard className="p-8 sm:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
+            <TiltCard className="p-6 sm:p-8 lg:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-amber-400/15 text-amber-400 flex items-center justify-center mx-auto mb-5 border border-amber-400/30 group-hover:scale-110 transition-transform shadow-lg shadow-amber-950/30">
-                  <Building2 className="w-8 h-8" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-amber-400/15 text-amber-400 flex items-center justify-center mx-auto mb-5 border border-amber-400/30 group-hover:scale-110 transition-transform shadow-lg shadow-amber-950/30">
+                  <Building2 className="w-7 h-7 sm:w-8 sm:h-8" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">Colleges &amp; Universities</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-medium">
@@ -51,10 +51,10 @@ export const FinalCTA = () => {
 
           {/* Students */}
           <ScrollReveal delay={0.2} className="h-full">
-            <TiltCard className="p-8 sm:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
+            <TiltCard className="p-6 sm:p-8 lg:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
               <div>
-                <div className="w-16 h-16 rounded-2xl bg-white/10 text-amber-300 flex items-center justify-center mx-auto mb-5 border border-white/20 group-hover:scale-110 transition-transform shadow-lg">
-                  <GraduationCap className="w-8 h-8" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 text-amber-300 flex items-center justify-center mx-auto mb-5 border border-white/20 group-hover:scale-110 transition-transform shadow-lg">
+                  <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">Students</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-medium">
@@ -71,8 +71,8 @@ export const FinalCTA = () => {
           </ScrollReveal>
 
           {/* Companies */}
-          <ScrollReveal delay={0.3} className="h-full">
-            <TiltCard className="p-8 sm:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
+          <ScrollReveal delay={0.3} className="h-full sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none w-full">
+            <TiltCard className="p-6 sm:p-8 lg:p-9 rounded-3xl bg-white/[0.06] border-2 border-amber-400/30 backdrop-blur-xl hover:bg-white/[0.1] hover:border-amber-400/70 hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 text-center h-full flex flex-col justify-between group">
               <div>
                 <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-5 border border-emerald-400/30 group-hover:scale-110 transition-transform shadow-lg">
                   <Briefcase className="w-8 h-8" />

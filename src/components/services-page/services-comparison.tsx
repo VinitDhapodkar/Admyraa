@@ -56,34 +56,39 @@ export const ServicesComparison = () => {
 
         {/* Comparison Table */}
         <ScrollReveal delay={0.15}>
-          <div className="rounded-3xl border-2 border-slate-200/90 overflow-hidden bg-white shadow-xl">
-            <div className="grid grid-cols-12 bg-slate-100/90 border-b border-slate-200 p-5 sm:p-6 text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700">
-              <div className="col-span-4 sm:col-span-4">Evaluation Metric</div>
-              <div className="col-span-4 sm:col-span-4 text-slate-500">Traditional Approach</div>
-              <div className="col-span-4 sm:col-span-4 text-amber-700 font-extrabold">ADMYRA DERE Model</div>
-            </div>
+          <div className="sm:hidden text-xs text-slate-400 font-medium text-center mb-2">
+            ← Scroll horizontally to compare →
+          </div>
+          <div className="rounded-3xl border-2 border-slate-200/90 overflow-x-auto bg-white shadow-xl">
+            <div className="min-w-[620px]">
+              <div className="grid grid-cols-12 bg-slate-100/90 border-b border-slate-200 p-4 sm:p-6 text-xs sm:text-sm font-black uppercase tracking-wider text-slate-700">
+                <div className="col-span-4">Evaluation Metric</div>
+                <div className="col-span-4 text-slate-500">Traditional Approach</div>
+                <div className="col-span-4 text-amber-700 font-extrabold">ADMYRA DERE Model</div>
+              </div>
 
-            <div className="divide-y divide-slate-100">
-              {comparisonData.map((row, idx) => (
-                <div
-                  key={row.feature}
-                  className={`grid grid-cols-12 p-5 sm:p-6 items-center text-xs sm:text-sm transition-colors ${
-                    idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"
-                  }`}
-                >
-                  <div className="col-span-4 sm:col-span-4 font-bold text-slate-900 pr-2">
-                    {row.feature}
+              <div className="divide-y divide-slate-100">
+                {comparisonData.map((row, idx) => (
+                  <div
+                    key={row.feature}
+                    className={`grid grid-cols-12 p-4 sm:p-6 items-center text-xs sm:text-sm transition-colors ${
+                      idx % 2 === 0 ? "bg-white" : "bg-slate-50/50"
+                    }`}
+                  >
+                    <div className="col-span-4 font-bold text-slate-900 pr-2">
+                      {row.feature}
+                    </div>
+                    <div className="col-span-4 text-slate-500 flex items-start gap-2 pr-2">
+                      <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                      <span>{row.traditional}</span>
+                    </div>
+                    <div className="col-span-4 font-semibold text-slate-900 flex items-start gap-2">
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <span className="text-emerald-950 font-bold">{row.admyra}</span>
+                    </div>
                   </div>
-                  <div className="col-span-4 sm:col-span-4 text-slate-500 flex items-start gap-2 pr-2">
-                    <X className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                    <span>{row.traditional}</span>
-                  </div>
-                  <div className="col-span-4 sm:col-span-4 font-semibold text-slate-900 flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <span className="text-emerald-950 font-bold">{row.admyra}</span>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </ScrollReveal>

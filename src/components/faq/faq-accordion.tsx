@@ -34,10 +34,10 @@ export const FAQAccordion = () => {
           {/* Left Column: Visual Guide Card ("What would you like to know about Us") */}
           <div className="lg:col-span-5">
             <ScrollReveal direction="left">
-              <TiltCard className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white border-2 border-amber-400/30 shadow-2xl relative overflow-hidden">
+              <TiltCard className="p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-[#050e1d] via-[#0b1f3a] to-[#102a4e] text-white border-2 border-amber-400/30 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/15 rounded-full blur-2xl pointer-events-none" />
 
-                <div className="w-16 h-16 p-2 rounded-2xl bg-white shadow-lg border border-amber-300/50 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 p-2 rounded-2xl bg-white shadow-lg border border-amber-300/50 flex items-center justify-center mb-6">
                   <Image
                     src="/logo-transparent.png"
                     alt="ADMYRA Crest"
@@ -51,7 +51,7 @@ export const FAQAccordion = () => {
                   Support &amp; Guidance
                 </span>
 
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 tracking-tight leading-snug">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-4 tracking-tight leading-snug">
                   Have Questions About Our Ecosystem?
                 </h3>
 
@@ -59,9 +59,9 @@ export const FAQAccordion = () => {
                   Discover how our Placement Partnership Program, training methodologies, and recruiter drives create predictable career results.
                 </p>
 
-                <div className="p-5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-400/40">
-                    <MessageCircle className="w-6 h-6" />
+                <div className="p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md flex items-center gap-3 sm:gap-4">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center shrink-0 border border-amber-400/40">
+                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">Need Personal Consultation?</div>
@@ -86,12 +86,12 @@ export const FAQAccordion = () => {
                   <AccordionItem
                     key={i}
                     value={`item-${i}`}
-                    className="p-2 sm:p-3 rounded-2xl border-2 border-slate-200/90 bg-slate-50/50 data-[state=open]:border-amber-400 data-[state=open]:bg-white data-[state=open]:shadow-lg transition-all"
+                    className="p-1.5 sm:p-3 rounded-2xl border-2 border-slate-200/90 bg-slate-50/50 data-[state=open]:border-amber-400 data-[state=open]:bg-white data-[state=open]:shadow-lg transition-all"
                   >
-                    <AccordionTrigger className="text-left font-black text-base sm:text-lg text-slate-900 px-4 hover:text-amber-700 hover:no-underline">
+                    <AccordionTrigger className="text-left font-black text-base sm:text-lg text-slate-900 px-3 sm:px-4 hover:text-amber-700 hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-sm sm:text-base text-slate-600 leading-relaxed px-4 pt-2 pb-3 font-medium">
+                    <AccordionContent className="text-sm sm:text-base text-slate-600 leading-relaxed px-3 sm:px-4 pt-2 pb-3 font-medium">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

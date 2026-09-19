@@ -38,9 +38,9 @@ export const ServicesCTA = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-6xl mx-auto">
           {/* Left: Contact Info & Value Badges */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-[#0b1f3a] via-[#102a4e] to-[#050e1d] text-white border border-amber-400/30 shadow-xl space-y-6">
-              <h3 className="text-2xl font-black tracking-tight">[Consultation Overview]</h3>
-              <p className="text-sm text-slate-400 leading-relaxed italic">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-[#0b1f3a] via-[#102a4e] to-[#050e1d] text-white border border-amber-400/30 shadow-xl space-y-6">
+              <h3 className="text-xl sm:text-2xl font-black tracking-tight">[Consultation Overview]</h3>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed italic">
                 [Details, advisory scope, and consultation support information will be added here.]
               </p>
 
@@ -49,9 +49,9 @@ export const ServicesCTA = () => {
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-400 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-slate-400">Direct Email</p>
-                    <a href={`mailto:${SITE_DATA.brand.email}`} className="font-semibold text-white hover:text-amber-400 transition-colors">
+                    <a href={`mailto:${SITE_DATA.brand.email}`} className="font-semibold text-white hover:text-amber-400 transition-colors break-words text-xs sm:text-sm">
                       {SITE_DATA.brand.email}
                     </a>
                   </div>
@@ -61,15 +61,15 @@ export const ServicesCTA = () => {
                   <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-amber-400 shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-slate-400">Location</p>
-                    <span className="font-semibold text-white">{SITE_DATA.brand.location}</span>
+                    <span className="font-semibold text-white text-xs sm:text-sm">{SITE_DATA.brand.location}</span>
                   </div>
                 </div>
               </div>
 
               <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/30">
-                <p className="text-xs font-bold text-amber-300">
+                <p className="text-xs font-bold text-amber-300 leading-relaxed">
                   ⚡ Guaranteed Response: Our team responds to institutional &amp; corporate inquiries within 24 business hours.
                 </p>
               </div>
@@ -78,7 +78,7 @@ export const ServicesCTA = () => {
 
           {/* Right: Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border-2 border-slate-200 shadow-xl">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-3xl bg-white border-2 border-slate-200 shadow-xl">
               {submitted ? (
                 <div className="text-center py-12 space-y-4">
                   <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto">
@@ -103,24 +103,25 @@ export const ServicesCTA = () => {
                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                       I am Inquiring As:
                     </label>
-                    <div className="grid grid-cols-3 gap-2 p-1.5 rounded-2xl bg-slate-100 border border-slate-200">
+                    <div className="grid grid-cols-3 gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-slate-100 border border-slate-200">
                       {[
-                        { id: "college", label: "College / TPO", icon: <Building2 className="w-3.5 h-3.5" /> },
-                        { id: "student", label: "Student", icon: <GraduationCap className="w-3.5 h-3.5" /> },
-                        { id: "company", label: "Employer / HR", icon: <Briefcase className="w-3.5 h-3.5" /> },
+                        { id: "college", label: "College", fullLabel: "College / TPO", icon: <Building2 className="w-3.5 h-3.5 shrink-0" /> },
+                        { id: "student", label: "Student", fullLabel: "Student", icon: <GraduationCap className="w-3.5 h-3.5 shrink-0" /> },
+                        { id: "company", label: "Employer", fullLabel: "Employer / HR", icon: <Briefcase className="w-3.5 h-3.5 shrink-0" /> },
                       ].map((item) => (
                         <button
                           key={item.id}
                           type="button"
                           onClick={() => setStakeholder(item.id as any)}
-                          className={`py-2 px-2 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
+                          className={`py-2 px-1.5 sm:px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1 sm:gap-1.5 transition-all ${
                             stakeholder === item.id
                               ? "bg-[#0b1f3a] text-amber-400 shadow-sm"
                               : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
                           }`}
                         >
                           {item.icon}
-                          <span className="truncate">{item.label}</span>
+                          <span className="hidden sm:inline truncate">{item.fullLabel}</span>
+                          <span className="sm:hidden truncate">{item.label}</span>
                         </button>
                       ))}
                     </div>
