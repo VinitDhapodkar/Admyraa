@@ -67,7 +67,19 @@ export const HeroSection = () => {
               </Button>
 
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto justify-center rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-800 hover:bg-amber-50/50 transition-colors font-bold">
-                <Link href="/about">{SITE_DATA.hero.secondaryCta}</Link>
+                <a
+                  href="/about"
+                  onClick={(e) => {
+                    const el = document.getElementById("about");
+                    if (el) {
+                      e.preventDefault();
+                      el.scrollIntoView({ behavior: "smooth", block: "start" });
+                      window.history.pushState(null, "", "/about");
+                    }
+                  }}
+                >
+                  {SITE_DATA.hero.secondaryCta}
+                </a>
               </Button>
 
               <Button

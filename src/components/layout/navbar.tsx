@@ -124,7 +124,14 @@ export const Navbar = () => {
       setClickedHref(href);
       setMobileOpen(false);
 
-      if (href.includes("#")) {
+      if (href === "/about" && pathname === "/") {
+        const el = document.getElementById("about");
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.pushState(null, "", "/about");
+        }
+      } else if (href.includes("#")) {
         const handled = scrollToHash(href, pathname);
         if (handled) e.preventDefault();
       }
