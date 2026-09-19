@@ -75,8 +75,8 @@ export const SITE_DATA = {
   brand: {
     name: "ADMYRA",
     fullName: "Digitally Enabled Real Employment",
-    tagline: "Learn. Train. Get Employed.",
-    statement: "Empowering Students. Enabling Careers. Delivering Employment.",
+    tagline: "Learn. Grow. Earn. Build Your Career.",
+    statement: "Empowering Students. Building Careers. Creating Opportunities.",
     email: "info@admyra.in",
     phone: "+91 81014 25431",
     whatsapp: "918101425431",

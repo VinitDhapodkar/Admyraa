@@ -9,6 +9,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://admyra.in"),
   title: "ADMYRA — Digitally Enabled Real Employment | Learn. Train. Get Employed.",
   description:
     "ADMYRA bridges education and employment through industry-focused training, employability development, corporate connections, and placement support for students, colleges, and companies.",
@@ -21,10 +22,35 @@ export const metadata: Metadata = {
     "job-ready students",
     "corporate hiring",
   ],
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: "/icon.png",
+    shortcut: "/icon.png",
+  },
   openGraph: {
     title: "ADMYRA — Digitally Enabled Real Employment",
     description: "Bridging the Gap Between Education & Employment. India's premier employability ecosystem.",
     type: "website",
+    url: "https://admyra.in",
+    siteName: "ADMYRA",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "ADMYRA Logo",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

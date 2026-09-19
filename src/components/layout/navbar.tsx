@@ -187,8 +187,8 @@ export const Navbar = () => {
             onClick={(e) => handleNavClick(e, "/")}
             className="flex items-center gap-2.5 shrink-0 group"
           >
-            <div className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 border border-white/20 group-hover:border-amber-400/60 transition-all duration-300">
-              <Image src="/logo-transparent.png" alt="ADMYRA" width={36} height={36} priority className="w-full h-full object-contain" />
+            <div className="relative w-9 h-9 flex items-center justify-center rounded-lg bg-white border border-white/20 group-hover:border-amber-400/60 transition-all duration-300">
+              <Image src="/logo.png" alt="ADMYRA" width={36} height={36} priority className="w-full h-full object-contain" />
             </div>
             <span className="font-extrabold tracking-tight text-white text-lg sm:text-xl">
               AD<span className="bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 bg-clip-text text-transparent">MYRA</span>
