@@ -10,7 +10,6 @@ import { ServiceCards } from "@/components/services/service-cards";
 import { WhyAdmyra } from "@/components/benefits/why-admyra";
 
 import { PartnershipCards } from "@/components/partnerships/partnership-cards";
-import { VisionMission } from "@/components/vision/vision-mission";
 import { FAQAccordion } from "@/components/faq/faq-accordion";
 import { TeamSection } from "@/components/team/team-section";
 import { FinalCTA } from "@/components/final-cta/final-cta";
@@ -34,7 +33,6 @@ export default function Home() {
       <WhyAdmyra />
 
       <PartnershipCards />
-      <VisionMission />
       <TeamSection />
       <FAQAccordion />
       <FinalCTA />

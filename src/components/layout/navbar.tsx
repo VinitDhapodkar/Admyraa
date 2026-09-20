@@ -27,30 +27,41 @@ function scrollToHash(href: string, pathname: string): boolean {
 
 /**
  * Map each section id → the nav href it belongs to.
- * Sections not in the nav (stats, solution, process, etc.) get mapped
- * to the nearest parent nav item so the highlight never goes blank.
+ * Sections not directly in the primary nav (stats, solution, process, etc.)
+ * get mapped forward to their parent section so the active indicator stays
+ * synchronized and moves forward with the scroll without jumping backward.
  */
 const SECTION_TO_NAV: Record<string, string> = {
   hero:         "/",
   stats:        "/",
-  about:        "/",
-  solution:     "/",
-  process:      "/",
-  problems:     "/",
-  services:     "/",
-  benefits:     "/",
-  partnerships: "/",
-  vision:       "/",
-  team:         "/",
+  about:        "/#about",
+  problem:      "/#about",
+  solution:     "/#about",
+  process:      "/#about",
+  services:     "/services",
+  why:          "/services",
+  partnerships: "/services",
+  team:         "/services",
   faq:          "/#faq",
+  "final-cta":  "/#contact",
   contact:      "/#contact",
 };
 
-// All section ids we want to observe (in DOM order, top → bottom)
+// All section ids we want to observe (in exact DOM order, top → bottom)
 const OBSERVED_IDS = [
-  "hero", "stats", "about", "solution", "process",
-  "problems", "services", "benefits", "partnerships",
-  "vision", "team", "faq", "contact",
+  "hero",
+  "stats",
+  "about",
+  "problem",
+  "solution",
+  "process",
+  "services",
+  "why",
+  "partnerships",
+  "team",
+  "faq",
+  "final-cta",
+  "contact",
 ];
 
 export const Navbar = () => {
@@ -76,27 +87,59 @@ export const Navbar = () => {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const update = () => {
-      // Use 35% from the top of the viewport as the trigger line
-      const triggerY = window.scrollY + window.innerHeight * 0.35;
+    let ticking = false;
 
-      // Walk sections bottom-up: first one whose top is above triggerY wins
+    const update = () => {
+      // 1. If at bottom of page, activate Contact
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 60
+      ) {
+        setScrollHref("/#contact");
+        ticking = false;
+        return;
+      }
+
+      // 2. If at top of page, activate Home
+      if (window.scrollY < 120) {
+        setScrollHref("/");
+        ticking = false;
+        return;
+      }
+
+      // 3. Use 35% from the top of the viewport as the trigger line
+      const triggerY = window.innerHeight * 0.35;
+
+      // Walk sections top-down: the furthest section whose top passed trigger line wins
       let activeId = OBSERVED_IDS[0];
       for (const id of OBSERVED_IDS) {
         const el = document.getElementById(id);
         if (!el) continue;
-        if (el.getBoundingClientRect().top + window.scrollY <= triggerY) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerY) {
           activeId = id;
         }
       }
 
       const navHref = SECTION_TO_NAV[activeId] ?? "/";
       setScrollHref(navHref);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
     };
 
     update(); // run once on mount
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [pathname]);
 
   // ── Close mobile on route change ──────────────────────────────────────────
@@ -124,13 +167,9 @@ export const Navbar = () => {
       setClickedHref(href);
       setMobileOpen(false);
 
-      if (href === "/about" && pathname === "/") {
-        const el = document.getElementById("about");
-        if (el) {
-          e.preventDefault();
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          window.history.pushState(null, "", "/about");
-        }
+      if (href === "/" && pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } else if (href.includes("#")) {
         const handled = scrollToHash(href, pathname);
         if (handled) e.preventDefault();

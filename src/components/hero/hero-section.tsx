@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { SITE_DATA } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { HeroVisual } from "./hero-visual";
@@ -60,24 +59,14 @@ export const HeroSection = () => {
               className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full"
             >
               <Button asChild size="lg" className="w-full sm:w-auto justify-center rounded-xl bg-[#0b1f3a] hover:bg-[#102a4e] text-white border border-amber-500/40 shadow-lg shadow-amber-950/20 hover:border-amber-400 gap-2 font-bold transition-all">
-                <a href="#contact">
+                <a href="#contact" className="flex items-center gap-2">
                   <span>{SITE_DATA.hero.primaryCta}</span>
                   <ArrowRight className="w-4 h-4 text-amber-400" />
                 </a>
               </Button>
 
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto justify-center rounded-xl border-slate-300 hover:border-amber-500 hover:text-amber-800 hover:bg-amber-50/50 transition-colors font-bold">
-                <a
-                  href="/about"
-                  onClick={(e) => {
-                    const el = document.getElementById("about");
-                    if (el) {
-                      e.preventDefault();
-                      el.scrollIntoView({ behavior: "smooth", block: "start" });
-                      window.history.pushState(null, "", "/about");
-                    }
-                  }}
-                >
+                <a href="#about">
                   {SITE_DATA.hero.secondaryCta}
                 </a>
               </Button>
@@ -145,7 +134,9 @@ export const HeroSection = () => {
               className="w-full justify-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold"
               onClick={() => {
                 setVideoModalOpen(false);
-                window.location.href = "#contact";
+                const el = document.getElementById("contact");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                else window.location.href = "/#contact";
               }}
             >
               Schedule an Institutional Consultation

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { Button } from "@/components/ui/button";
-import { Send, CheckCircle2, Mail, Phone, MapPin, Building2, GraduationCap, Briefcase } from "lucide-react";
+import { Send, CheckCircle2, Mail, MapPin, Building2, GraduationCap, Briefcase } from "lucide-react";
 import { SITE_DATA } from "@/data/content";
 
 export const ServicesCTA = () => {

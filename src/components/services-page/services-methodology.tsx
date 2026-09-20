@@ -3,7 +3,7 @@
 import React from "react";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { TiltCard } from "@/components/motion/tilt-card";
-import { CheckCircle2, Workflow, ArrowRight, FileSearch, Code2, Users, ShieldCheck, Briefcase, Award } from "lucide-react";
+import { CheckCircle2, Workflow, FileSearch, Code2, Users, ShieldCheck, Briefcase, Award } from "lucide-react";
 
 export const ServicesMethodology = () => {
   const steps = [

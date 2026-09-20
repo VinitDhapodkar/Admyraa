@@ -36,9 +36,8 @@ export const Footer = () => {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-300/80 mb-4">Company</h4>
             <ul className="space-y-2.5 text-sm text-slate-300">
-              <li><Link href="/about" className="hover:text-amber-400 transition-colors">About ADMYRA</Link></li>
-              <li><Link href="/about#vision" className="hover:text-amber-400 transition-colors">Vision &amp; Mission</Link></li>
-              <li><Link href="/about#team" className="hover:text-amber-400 transition-colors">Leadership Team</Link></li>
+              <li><Link href="/#about" className="hover:text-amber-400 transition-colors">About ADMYRA</Link></li>
+              <li><Link href="/#team" className="hover:text-amber-400 transition-colors">Leadership Team</Link></li>
               <li><Link href="/#faq" className="hover:text-amber-400 transition-colors">Help &amp; FAQ</Link></li>
             </ul>
           </div>

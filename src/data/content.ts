@@ -42,14 +42,6 @@ export interface BenefitItem {
   icon: string;
 }
 
-export interface TestimonialItem {
-  quote: string;
-  name: string;
-  role: string;
-  initials: string;
-  rating: number;
-}
-
 export interface PartnershipTier {
   tier: string;
   title: string;
@@ -84,7 +76,7 @@ export const SITE_DATA = {
   },
   navLinks: [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "About", href: "/#about" },
     { label: "Services", href: "/services" },
     { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/#contact" },
@@ -266,50 +258,6 @@ export const SITE_DATA = {
       title: "Scalable Partnership Model",
       description: "Flexible engagement solutions crafted for regional institutions, autonomous campuses, and universities.",
       icon: "Layers",
-    },
-  ],
-  testimonials: [
-    {
-      quote: "ADMYRA's training and interview preparation helped me secure my first job within weeks of graduation. The mentorship was truly life-changing.",
-      name: "Priya Sharma",
-      role: "Software Developer",
-      initials: "PS",
-      rating: 5,
-    },
-    {
-      quote: "The placement support and mentoring sessions gave me the confidence to crack multiple technical interviews. ADMYRA changed my perspective on career readiness.",
-      name: "Rahul Verma",
-      role: "Business Analyst",
-      initials: "RV",
-      rating: 5,
-    },
-    {
-      quote: "Partnering with ADMYRA significantly improved our campus placement outcomes. Their structured methodology and recruiter connect are unmatched.",
-      name: "Placement Cell Coordinator",
-      role: "Partner Engineering Campus",
-      initials: "PC",
-      rating: 5,
-    },
-    {
-      quote: "The soft skills and personality development workshops transformed my communication. I felt completely prepared when facing corporate panels.",
-      name: "Ananya Patel",
-      role: "HR Executive",
-      initials: "AP",
-      rating: 5,
-    },
-    {
-      quote: "ADMYRA provided pre-trained candidates with hands-on exposure to our tools. We cut onboarding time by half and hired high-performing freshers.",
-      name: "Kiran Mehta",
-      role: "HR Manager, TechCorp",
-      initials: "KM",
-      rating: 5,
-    },
-    {
-      quote: "Our students are now placed in reputed firms with strong packages within 3 months of completion. ADMYRA's ecosystem delivered on every promise.",
-      name: "Dr. Suresh Kumar",
-      role: "Dean, Technical University",
-      initials: "SK",
-      rating: 5,
     },
   ],
   partnerships: [
