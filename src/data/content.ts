@@ -92,10 +92,10 @@ export const SITE_DATA = {
     videoCta: "Watch How It Works",
   },
   stats: [
-    { number: 0, suffix: "+", label: "College & University Partners", icon: "Building2" },
+    { number: 2, suffix: "", label: "College & University Partners", icon: "Building2" },
     { number: 0, suffix: "+", label: "Students Impacted", icon: "Users" },
     { number: 0, suffix: "+", label: "Hiring Companies", icon: "Briefcase" },
-    { number: 0, suffix: "%", label: "Placement Support Rate", icon: "Target" },
+    { number: 100, suffix: "%", label: "Placement Support Rate", icon: "Target" },
   ],
   problems: [
     {
@@ -179,7 +179,7 @@ export const SITE_DATA = {
     {
       id: "colleges",
       title: "For Universities",
-      heading: "[University Program Heading]",
+      heading: "Partner Universities: Manipal Jaipur & Shoolini University",
       description:
         "[Program description and institutional partnership details will be added here.]",
       features: [
@@ -315,34 +315,39 @@ export const SITE_DATA = {
   ],
   team: [
     {
-      name: "Subrata",
+      name: "Subrata Giri",
       role: "CEO",
       bio: "Leads ADMYRA's overall vision, strategy, and growth by connecting education with real employment outcomes at scale.",
     },
     {
-      name: "Rabi",
+      name: "Mr. Rabisankar",
       role: "Co-Founder",
       bio: "Co-founder focused on building ADMYRA's institutional relationships and helping shape long-term student career outcomes through strategic partnerships.",
     },
     {
-      name: "Vinit",
+      name: "Vinit Dhapodkar",
       role: "Co-Founder",
       bio: "Co-founder leading technology and digital systems that power ADMYRA's learning, coordination, and placement ecosystem.",
     },
     {
-      name: "Laxmi",
+      name: "Laxmi Singh",
       role: "HR",
       bio: "Handles people operations, talent engagement, and internal coordination to keep teams aligned and high-performing.",
     },
     {
-      name: "Aku",
+      name: "Akansha Tiwary",
       role: "Service Manager",
       bio: "Oversees service delivery, stakeholder communication, and execution quality across ADMYRA programs.",
     },
     {
-      name: "Sabnam",
+      name: "Sabnam pervin",
       role: "Team Manager",
       bio: "Leads day-to-day team management and cross-functional execution to ensure smooth and consistent outcomes.",
+    },
+    {
+      name: "Snigdha Basak",
+      role: "Team Manager",
+      bio: "Supports team operations and execution workflows to maintain consistent delivery quality across ADMYRA initiatives.",
     },
   ],
 };

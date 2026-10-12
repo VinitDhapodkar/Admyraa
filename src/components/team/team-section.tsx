@@ -9,12 +9,13 @@ import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 
 const getMemberImage = (memberName: string) => {
   const map: Record<string, string> = {
-    Subrata: "/subrata.jpeg",
-    Rabi: "/rabi.jpeg",
-    Vinit: "/vinit.jpeg",
-    Laxmi: "/Laxmi.jpeg",
-    Aku: "/aku.jpeg",
-    Sabnam: "/sabnam.jpeg",
+    "Subrata Giri": "/subrata.jpeg",
+    "Mr. Rabisankar": "/rabi.jpeg",
+    "Vinit Dhapodkar": "/vinit.jpeg",
+    "Laxmi Singh": "/Laxmi.jpeg",
+    "Akansha Tiwary": "/aku.jpeg",
+    "Sabnam pervin": "/sabnam.jpeg",
+    "Snigdha Basak": "/singdha.jpeg",
   };
 
   return map[memberName] ?? "/subrata.jpeg";
