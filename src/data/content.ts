@@ -315,20 +315,34 @@ export const SITE_DATA = {
   ],
   team: [
     {
-      name: "Founder",
-      role: "Chief Executive Officer",
-      bio: "Visionary executive driving ADMYRA's national mission to bridge higher education and enterprise hiring through digital scale and student transformation.",
+      name: "Subrata",
+      role: "CEO",
+      bio: "Leads ADMYRA's overall vision, strategy, and growth by connecting education with real employment outcomes at scale.",
     },
     {
-      name: "Co-Founder",
-      role: "Chief Operations Officer",
-      bio: "Operations and delivery strategist spearheading academic partnerships, campus integration, and high-impact curriculum execution nationwide.",
+      name: "Rabi",
+      role: "Co-Founder",
+      bio: "Co-founder focused on building ADMYRA's institutional relationships and helping shape long-term student career outcomes through strategic partnerships.",
     },
     {
-      name: "Join Our Team",
-      role: "We're Hiring",
-      bio: "Passionate about education, skilling, and youth empowerment? We are actively hiring across curriculum, partnership management, and tech.",
-      isHiring: true,
+      name: "Vinit",
+      role: "Co-Founder",
+      bio: "Co-founder leading technology and digital systems that power ADMYRA's learning, coordination, and placement ecosystem.",
+    },
+    {
+      name: "Laxmi",
+      role: "HR",
+      bio: "Handles people operations, talent engagement, and internal coordination to keep teams aligned and high-performing.",
+    },
+    {
+      name: "Aku",
+      role: "Service Manager",
+      bio: "Oversees service delivery, stakeholder communication, and execution quality across ADMYRA programs.",
+    },
+    {
+      name: "Sabnam",
+      role: "Team Manager",
+      bio: "Leads day-to-day team management and cross-functional execution to ensure smooth and consistent outcomes.",
     },
   ],
 };
