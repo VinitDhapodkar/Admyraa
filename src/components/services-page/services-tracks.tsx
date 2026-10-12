@@ -2,7 +2,34 @@
 
 import React from "react";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
-import { Building2, GraduationCap, Briefcase, Clock } from "lucide-react";
+import { Building2, GraduationCap, Briefcase, Clock, CheckCircle2, ArrowRight } from "lucide-react";
+
+const UNIVERSITY_PARTNERS = [
+  {
+    name: "Manipal University Jaipur",
+    program: "Campus Employability & Placement Readiness Program",
+    overview:
+      "A structured collaboration focused on improving student employability through job-readiness training, interview preparation, and recruiter-facing placement support.",
+    points: [
+      "Department-wise skill diagnostics and baseline employability assessment",
+      "Soft-skills, aptitude, and interview-readiness bootcamps",
+      "Role-aligned technical finishing tracks for final-year students",
+      "Mock interviews, resume clinics, and recruiter connect activities",
+    ],
+  },
+  {
+    name: "Shoolini University",
+    program: "Industry-Linked Career Acceleration Program",
+    overview:
+      "A delivery model designed to bridge academic learning with hiring expectations through continuous mentoring, project-based upskilling, and placement execution support.",
+    points: [
+      "Career pathway planning for students across key disciplines",
+      "Industry mentorship sessions and practical project orientation",
+      "Structured preparation for GD, PI, and campus hiring rounds",
+      "Placement tracking support with periodic performance insights",
+    ],
+  },
+];
 
 const ComingSoonBlock = ({ accentColor }: { accentColor: string }) => {
   const colorMap: Record<string, { border: string; bg: string; icon: string; badge: string; badgeBg: string; text: string }> = {
@@ -77,7 +104,51 @@ export const ServicesTracks = () => {
             </h2>
           </ScrollReveal>
 
-          <ComingSoonBlock accentColor="emerald" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            {UNIVERSITY_PARTNERS.map((uni, idx) => (
+              <ScrollReveal key={uni.name} delay={idx * 0.08}>
+                <div className="h-full p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border-2 border-slate-200/90 shadow-lg hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between">
+                  <div>
+                    <div className="inline-flex items-center gap-2 text-[11px] font-extrabold tracking-widest text-emerald-900 uppercase bg-emerald-50 border border-emerald-200/90 px-3.5 py-1.5 rounded-full mb-4">
+                      <Building2 className="w-3.5 h-3.5 text-emerald-600" />
+                      University Partner
+                    </div>
+
+                    <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
+                      {uni.name}
+                    </h3>
+
+                    <p className="text-sm font-black uppercase tracking-wider text-emerald-700 mt-2 mb-4">
+                      {uni.program}
+                    </p>
+
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                      {uni.overview}
+                    </p>
+
+                    <ul className="space-y-3">
+                      {uni.points.map((point) => (
+                        <li key={point} className="flex items-start gap-2.5 text-sm text-slate-700 leading-relaxed font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-6 mt-6 border-t border-slate-200/80">
+                    <a
+                      href="#inquire"
+                      className="inline-flex items-center gap-2 text-sm font-black text-[#0b1f3a] hover:text-emerald-700 transition-colors"
+                    >
+                      <span>Request University Collaboration Details</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
